@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityResultLauncher<Intent> activityResultLauncher;
 
-    MyDataBase db;
+    public static MyDataBase db;
 
     boolean isCamera;
 
@@ -109,7 +109,10 @@ public class MainActivity extends AppCompatActivity {
                 if(!name.equals("") && !des.equals("")){
                     boolean flag = db.insertData(name, des, convertPhoto());
                     if(flag){
+
                         Toast.makeText(MainActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                        startActivity(intent);
                     }else{
                         Toast.makeText(MainActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
                     }

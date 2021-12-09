@@ -62,7 +62,5 @@ public class MyDataBase extends SQLiteOpenHelper {
         }catch (Exception ex){
             return false;
         }
-
     }
-
 }
